@@ -1,0 +1,16 @@
+# terra_pinyin.custom.yaml
+#
+# 作者：瑾昀 <cokunhui@gmail.com>
+#
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 於重新部署後生效
+#
+
+patch:
+  translator/dictionary: terra_pinyin.extended #自訂詞庫
+  "switches/@0/reset": 1  #將地球拼音設成預設英文輸入
+  translator/dictionary: terra_pinyin.hsueh #自訂詞庫
