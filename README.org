@@ -1,0 +1,54 @@
+
+- default.custom.yaml
+新增了三個方案
+#+BEGIN_EXAMPLE
+schema_list:
+  - schema: terra_pinyin
+  - schema: bopomofo_tw
+  - schema: myliu
+#+END_EXAMPLE
+設定每頁候選個數的默認值爲 9
+#+BEGIN_EXAMPLE
+
+patch:
+  "menu/page_size": 9
+#+END_EXAMPLE
+
+- installation.yaml
+- symbols.yaml
+- terra_pinyin.custom.yaml
+patch:
+  translator/dictionary: terra_pinyin.hsueh #自訂詞庫
+  "menu/page_size": 9  #候選字設爲9個
+  "switches/@0/reset": 1  #將地球拼音設成預設英文輸入
+- terra_pinyin.dict.yaml
+輸入法原生詞庫，修改一些符合臺灣習慣
+#+BEGIN_EXAMPLE
+
+#+END_EXAMPLE
+- terra_pinyin.hsueh.dict.yaml
+我的自訂詞庫，匯入其他詞庫的表格
+#+BEGIN_EXAMPLE
+use_preset_vocabulary: true
+import_tables:
+  - terra_pinyin
+  - terra_pinyin.extended
+#+END_EXAMPLE
+
+- terra_pinyin.schema.yaml
+    - 可以使用 symbols 表情符號
+#+BEGIN_EXAMPLE
+punctuator:
+  import_preset: symbols # 空兩格
+recognizer:
+  import_preset: default # 空兩格
+  patterns: # 空兩格
+    number: "^[-+]?[0-9][.:0-9]*[%]?$" # 空四格
+    punct: "^/([0-9]0?|[a-z]+)$" # 空四格
+    reverse_lookup: "`[a-z]*'?$" # 空四格
+#+END_EXAMPLE
+
+    - 新增自己的詞庫
+#+BEGIN_EXAMPLE
+  dictionary: terra_pinyin.hsueh # 空二格
+#+END_EXAMPLE
