@@ -1,54 +1,90 @@
+* RIME
+ [[http://rime.im/][Rime Input Method Engine · 中州韻輸入法引擎]]
+修改了一些設定以符合自己需要， Rime 實在太好用了。
 
-* default.custom.yaml
-- 新增了三個方案
+用戶資料夾
+【中州韻】 ~/.config/ibus/rime/
+【小狼毫】 "%APPDATA%\Rime"
+【鼠鬚管】 ~/Library/Rime/
+
+** default.custom.yaml
+ - 新增了三個方案
+ #+BEGIN_EXAMPLE
+ schema_list:
+   - schema: terra_pinyin # 空二格
+   - schema: bopomofo_tw # 空二格
+   - schema: myliu # 空二格
+ #+END_EXAMPLE
+ - 設定每頁候選個數的默認值爲 9
+ #+BEGIN_EXAMPLE
+
+ patch:
+   "menu/page_size": 9
+ #+END_EXAMPLE
+- 註解掉部分衝突快速鍵
 #+BEGIN_EXAMPLE
-schema_list:
-  - schema: terra_pinyin
-  - schema: bopomofo_tw
-  - schema: myliu
+  caption: 〔方案選單〕
+  hotkeys:
+    - Control+grave
+#    - Control+Shift+grave # 不使用
+#    - F4  # 不使用
 #+END_EXAMPLE
-- 設定每頁候選個數的默認值爲 9
+** installation.yaml
+- 修改同步資料夾還有使用者名稱
 #+BEGIN_EXAMPLE
-
+installation_id: "user name"
+rime_version: 1.1.2
+sync_dir: "~/inbox/other/RimeSync"
+#+END_EXAMPLE
+** symbols.yaml
+- 新增表情符號
+** terra_pinyin.custom.yaml
+- 調整自訂詞庫還有候選字以及預設英文輸入
+#+BEGIN_EXAMPLE
 patch:
-  "menu/page_size": 9
+   translator/dictionary: terra_pinyin.hsueh #自訂詞庫
+   "menu/page_size": 9  #候選字設爲9個
+   "switches/@0/reset": 1  #將地球拼音設成預設英文輸入
+#+END_EXAMPLE
+** terra_pinyin.dict.yaml
+ 輸入法原生詞庫，修改一些異體字符合臺灣習慣
+https://github.com/rime/home/wiki/RimeWithSchemata
+- 輸入 m 可以選字而不會只有“呣”而已
+ #+BEGIN_EXAMPLE
+呣 m2>mou2
+嘸蝦米 mu2 xia1 mi3 > fu3 xia1 mi3
+ #+END_EXAMPLE
+- 修改一些異體字詞組，也許要多按幾次讓輸入法記憶
+#+BEGIN_EXAMPLE
+牀 床
+裏 裡
+麪 麵
+羣 群
+峯 峰
+纔 才
 #+END_EXAMPLE
 
-* installation.yaml
-* symbols.yaml
-* terra_pinyin.custom.yaml
-patch:
-  translator/dictionary: terra_pinyin.hsueh #自訂詞庫
-  "menu/page_size": 9  #候選字設爲9個
-  "switches/@0/reset": 1  #將地球拼音設成預設英文輸入
-* terra_pinyin.dict.yaml
-輸入法原生詞庫，修改一些符合臺灣習慣
-#+BEGIN_EXAMPLE
-
-#+END_EXAMPLE
-* terra_pinyin.hsueh.dict.yaml
-我的自訂詞庫，匯入其他詞庫的表格
-#+BEGIN_EXAMPLE
-use_preset_vocabulary: true
-import_tables:
-  - terra_pinyin
-  - terra_pinyin.extended
-#+END_EXAMPLE
-
-* terra_pinyin.schema.yaml
-    - 可以使用 symbols 表情符號
-#+BEGIN_EXAMPLE
-punctuator:
-  import_preset: symbols # 空兩格
-recognizer:
-  import_preset: default # 空兩格
-  patterns: # 空兩格
-    number: "^[-+]?[0-9][.:0-9]*[%]?$" # 空四格
-    punct: "^/([0-9]0?|[a-z]+)$" # 空四格
-    reverse_lookup: "`[a-z]*'?$" # 空四格
-#+END_EXAMPLE
-
-    - 新增自己的詞庫
-#+BEGIN_EXAMPLE
-  dictionary: terra_pinyin.hsueh # 空二格
-#+END_EXAMPLE
+** terra_pinyin.schema.yaml
+- 讓地球拼音可以使用 symbols 表情符號，輸入 /bq 或是其他內定鍵使用
+ #+BEGIN_EXAMPLE
+ punctuator:
+   import_preset: symbols # 空兩格
+ recognizer:
+   import_preset: default # 空兩格
+   patterns: # 空兩格
+     number: "^[-+]?[0-9][.:0-9]*[%]?$" # 空四格
+     punct: "^/([0-9]0?|[a-z]+)$" # 空四格
+     reverse_lookup: "`[a-z]*'?$" # 空四格
+ #+END_EXAMPLE
+- 新增自己的詞庫
+ #+BEGIN_EXAMPLE
+   dictionary: terra_pinyin.hsueh # 空二格
+ #+END_EXAMPLE
+** terra_pinyin.hsueh.dict.yaml
+ 我的自訂詞庫，匯入其他詞庫的表格
+ #+BEGIN_EXAMPLE
+ use_preset_vocabulary: true
+ import_tables:
+   - terra_pinyin
+   - terra_pinyin.extended # 東風破 https://github.com/rime/brise
+ #+END_EXAMPLE
