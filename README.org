@@ -1,5 +1,5 @@
 
-- default.custom.yaml
+* default.custom.yaml
 新增了三個方案
 #+BEGIN_EXAMPLE
 schema_list:
