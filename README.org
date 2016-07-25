@@ -1,13 +1,13 @@
 
 * default.custom.yaml
-新增了三個方案
+- 新增了三個方案
 #+BEGIN_EXAMPLE
 schema_list:
   - schema: terra_pinyin
   - schema: bopomofo_tw
   - schema: myliu
 #+END_EXAMPLE
-設定每頁候選個數的默認值爲 9
+- 設定每頁候選個數的默認值爲 9
 #+BEGIN_EXAMPLE
 
 patch:
