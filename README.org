@@ -1,11 +1,18 @@
 * RIME
  [[http://rime.im/][Rime Input Method Engine · 中州韻輸入法引擎]]
+ 
 修改了一些設定以符合自己需要， Rime 實在太好用了。
 
+重新部署時可能要兩次，第二次記得還要再更改 terra_pinyin.custom.yaml ，因爲他的內容會還原回未修改狀態，總是不能一次搞定，不知道哪裏出錯。
+
 用戶資料夾
+
 【中州韻】 ~/.config/ibus/rime/
+
 【小狼毫】 "%APPDATA%\Rime"
+
 【鼠鬚管】 ~/Library/Rime/
+
 
 ** default.custom.yaml
  - 新增了三個方案
