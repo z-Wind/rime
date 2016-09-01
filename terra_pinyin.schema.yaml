@@ -42,7 +42,8 @@ punctuator:
 recognizer:
   import_preset: default
   patterns:
-    punct: "^/[a-z\\[\\]]*$" #加上了[]符號
+    number: "^[-+]?[0-9][.:0-9]*[%]?$"
+    punct: "^/([0-9]0?|[a-z]+)$"
     reverse_lookup: "`[a-z]*'?$"
   comment_format:
     - "xform ([aeiou])(ng?|r)([1234]) $1$3$2"
