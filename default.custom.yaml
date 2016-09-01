@@ -4,14 +4,14 @@
 config_version: "0.35"
 
 schema_list:
-  - schema: terra_pinyin
+  - schema: terra_pinyin # 地球拼音
+  - schema: bopomofo_tw # 注音
+  - schema: myliu # 嘸蝦米
 #  - schema: luna_pinyin
 #  - schema: cangjie5
 #  - schema: luna_pinyin_fluency
 #  - schema: luna_pinyin_simp
 #  - schema: luna_pinyin_tw
-  - schema: bopomofo_tw
-
 
 switcher:
   caption: 〔方案選單〕
