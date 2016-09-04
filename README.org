@@ -70,7 +70,14 @@ https://github.com/rime/home/wiki/RimeWithSchemata
 峯 峰
 纔 才
 #+END_EXAMPLE
-
+*** 增加一些沒有聲調的字
+用TAB分隔
+的	de3
+了	le3
+嗎	ma1
+嘛	ma2
+啊	a1
+不	bu2
 ** terra_pinyin.schema.yaml
 - 讓地球拼音可以使用 symbols 表情符號，輸入 /bq 或是其他內定鍵使用
  #+BEGIN_EXAMPLE
