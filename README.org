@@ -74,10 +74,13 @@ https://github.com/rime/home/wiki/RimeWithSchemata
 #+BEGIN_EXAMPLE
 用TAB分隔
 的	de3
+地	de3
 了	le3
 嗎	ma1
 嘛	ma2
+嘛	ma1
 啊	a1
+呢	ne1
 不	bu2
 #+END_EXAMPLE
 ** terra_pinyin.schema.yaml
