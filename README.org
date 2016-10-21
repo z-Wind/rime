@@ -73,6 +73,7 @@ https://github.com/rime/home/wiki/RimeWithSchemata
 *** 增加一些沒有聲調的字
 #+BEGIN_EXAMPLE
 # 用TAB分隔
+的	de1
 亞	ya3
 矽	si4
 涯	yai2
