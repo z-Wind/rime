@@ -75,6 +75,7 @@ https://github.com/rime/home/wiki/RimeWithSchemata
 # 用TAB分隔
 期	qi2
 和	han4
+液	yi4
 的	de1
 亞	ya3
 矽	si4
