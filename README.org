@@ -75,6 +75,8 @@ https://github.com/rime/home/wiki/RimeWithSchemata
 # 用TAB分隔
 著	zhe3
 著	zhao2
+著	zhuo2
+著	zhu4
 髮	fa3
 法	fa4
 液	yi4
