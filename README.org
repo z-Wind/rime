@@ -73,6 +73,11 @@ https://github.com/rime/home/wiki/RimeWithSchemata
 *** 增加一些沒有聲調的字
 #+BEGIN_EXAMPLE
 # 用TAB分隔
+著	zhe3
+著	zhao2
+髮	fa3
+法	fa4
+液	yi4
 期	qi2
 和	han4
 液	yi4
