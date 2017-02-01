@@ -73,6 +73,7 @@ https://github.com/rime/home/wiki/RimeWithSchemata
 *** 增加一些沒有聲調的字
 #+BEGIN_EXAMPLE
 # 用TAB分隔
+尛	ma2
 著	zhe3
 著	zhao2
 著	zhuo2
