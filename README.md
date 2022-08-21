@@ -11,7 +11,7 @@
 * Ctrl + 「`」：開啟方案選單
 * Shift + Space：切換 全形/半形
 
-# 各檔案簡述
+# 檔案簡述
 * 自定前，可先看一下原檔支援的設定
 * default.yaml
     * 全局設定
@@ -39,6 +39,12 @@
         * 例如：zliu.custom.yaml
 * symbols.yaml
     * 擴充的特殊符號
+* user.yaml
+    * 用戶狀態信息：用來保存當前所使用的方案ID，以及各種開關的狀態
+* installation.yaml
+    * 安裝信息：保存安裝 ID 用以區分不同來源的備份數據，也可以在此處設定同步位置與名稱
+* essay.txt(Option)
+    * 八股文：一份詞匯表和簡陋的語言模型
 
 # Debug 小技巧
 * 看 build 中的文件是否有併入設定檔
