@@ -1,0 +1,10 @@
+# zliu 自定檔
+# encoding: utf-8
+# 主要實現特殊標點符號、詞庫等功能
+# Schema.yaml 詳解 https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md
+
+patch:
+  # "switches/@0/reset": 1                  # 表示將 switcher 列表中的第一個元素（即 ascii_mode 開關）的初始值重設爲狀態1（即「英文」）。
+  menu:
+    alternative_select_keys: "0123456789" # 重碼選擇鍵，如沒有寫-預設 123456789\
+    page_size: 7	                        # 選單 每頁 顯示 個數

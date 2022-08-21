@@ -1,8 +1,9 @@
-# myliu
-# amoshyc
+# zliu.dict.yaml
+# encoding: utf-8
+# https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#dictyaml-%E8%A9%B3%E8%A7%A3
 
 ---
-name: myliu
+name: zliu
 version: "0.1"
 sort: original
 column:
@@ -36708,4 +36709,3 @@ http://blog.bs2.to/EdwardLee	blog
 憹	hrok
 軆	srod
 軆	sfd
-

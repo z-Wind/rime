@@ -1,0 +1,7 @@
+# 小狼毫自定檔
+# encoding: utf-8
+# 主要控制托盤圖標、候選詞橫豎排列、界面配色等等功能
+
+patch:
+  "style/display_tray_icon": true     # 顯示圖標
+  "style/color_scheme": dark_temple   # 設定 skin

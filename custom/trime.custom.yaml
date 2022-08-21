@@ -1,0 +1,90 @@
+# trime.custom.yaml 
+# encoding: utf-8 
+# https://github.com/osfans/trime/wiki/trime.yaml%E8%A9%B3%E8%A7%A3
+
+patch:  
+  "style/color_scheme": zliu
+  "preset_keys/BackSpace": {label: '⌫', repeatable: true, send: BackSpace}
+  "preset_keys/Caps_Lock": {label: '⇪', send: Shift_L}
+  "preset_keys/Hide": {label: '︾', send: BACK}
+  "preset_keys/PairDoubleQuote":  {text: '""{Left}', label: '“”'}
+
+  "preset_keyboards/zliu":
+    name: 嘸蝦米鍵盤
+    author: "zWind"
+    ascii_mode: 0
+    label_transform: uppercase
+    width: 10
+    height: 100
+    keys: # 鍵盤中每對{}括號代表一個按鍵，按從左到右、從上到下的順序排列。每行的寬度排滿100或雖然不足100但無法再容納一個按鍵又或者每行按鍵數量達到columns的設定值時，轉到下一行繼續排列。
+    - {click: '1', long_click: '!', hint: "ㄅ"}
+    - {click: '2', long_click: '@', hint: "ㄉ"}
+    - {click: '3', long_click: '#', hint: "ˇ"}
+    - {click: '4', long_click: '$', hint: "ˋ"}
+    - {click: '5', long_click: '%', hint: "ㄓ"}
+    - {click: '6', long_click: '^', hint: "ˊ"}
+    - {click: '7', long_click: '&', hint: "˙"}
+    - {click: '8', long_click: '*', hint: "ㄚ"}
+    - {click: '9', long_click: '(', hint: "ㄞ"}
+    - {click: '0', long_click: ')', hint: "ㄢ"}
+
+    - {click: 'q', long_click: '_', hint: "ㄆ"}
+    - {click: 'w', long_click: '-', hint: "ㄊ/ㄦ"}
+    - {click: 'e', long_click: '+', hint: "ㄍ"}
+    - {click: 'r', long_click: '=', hint: "ㄐ"}
+    - {click: 't', long_click: '|', hint: "ㄔ"}
+    - {click: 'y', long_click: '\', hint: "ㄗ"}
+    - {click: 'u', long_click: '[', hint: "ㄧ"}
+    - {click: 'i', long_click: ']', hint: "ㄛ"}
+    - {click: 'o', long_click: '{', hint: "ㄟ"}
+    - {click: 'p', long_click: '}', hint: "ㄣ"}
+    
+    - {width: 5}
+    - {click: 'a', long_click: select_all, hint: "ㄇ"}
+    - {click: 's', long_click: Home, hint: "ㄋ"}
+    - {click: 'd', long_click: End, hint: "ㄎ"}
+    - {click: 'f', long_click: Page_Up, hint: "ㄑ"}
+    - {click: 'g', long_click: Page_Down, hint: "ㄕ"}
+    - {click: 'h', long_click: Tab, hint: "ㄘ"}
+    - {click: 'j', long_click: Left, hint: "ㄨ"}
+    - {click: 'k', long_click: Right, hint: "ㄜ"}
+    - {click: 'l', long_click: ';', hint: "ㄠ/ㄤ"}
+    - {width: 5}
+
+    - {click: Caps_Lock, label: '⇪', width: 15}
+    - {click: 'z', long_click: '`', hint: "ㄈ"}
+    - {click: 'x', long_click: cut, hint: "ㄌ"}
+    - {click: 'c', long_click: copy, hint: "ㄏ"}
+    - {click: 'v', long_click: paste, hint: "ㄒ"}
+    - {click: 'b', long_click: Date, hint: "ㄖ"}
+    - {click: 'n', long_click: Time, hint: "ㄙ"}
+    - {click: 'm', long_click: PairDoubleQuote, hint: "ㄩ"}
+    - {click: BackSpace, label: '⌫', width: 15}
+
+    - {click: Hide, label: '︾', width: 15}
+    - {click: ',', long_click: Menu, hint: "ㄝ"}
+    - {click: '.', long_click: '<', paging: Page_Up, hint: "ㄡ"}
+    - {click: space, width: 30}
+    - {click: '/', long_click: '>', has_menu: Page_Down, hint: "ㄥ"}
+    - {click: Keyboard_symbols, long_click: Keyboard_number}
+    - {click: Return, long_click: CommitComment, width: 15}
+
+  "preset_color_schemes/zliu":
+    name: dark
+    author: zWind
+    text_color: 0xdaf692
+    back_color: 0x222222
+    border_color: 0x333333
+    hilited_text_color: 0x9acfff
+    hilited_back_color: 0x222222
+    hilited_candidate_text_color: 0xdaf692
+    hilited_candidate_back_color: 0x111111
+    candidate_text_color: 0xe6e3d8
+    comment_text_color: 0x808080
+
+  # "style/candidate_view_height": 55       # 候選字區高度
+  # "style/candidate_text_size": 36         # 候選字體大小
+  # "style/key_text_size": 32               # 按鍵文本大小（click）
+  # "style/symbol_text_size": 14            # 符號大小（long_click 和 hint）
+  # "style/text_size": 30                   # 編碼大小
+  # "style/comment_text_size": 16           # 候選注釋大小
