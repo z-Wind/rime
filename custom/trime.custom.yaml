@@ -3,17 +3,23 @@
 # https://github.com/osfans/trime/wiki/trime.yaml%E8%A9%B3%E8%A7%A3
 
 patch:  
-  "style/color_scheme": zliu
+  "style/keyboard_height": 280  # 不能太高，避免切換時鍵盤高度變化而造成閃爍
+  "style/layout/position": left # default:fixed 懸浮窗口位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+  "style/layout/min_length": 1  # 懸浮窗最小詞長（候選詞長大於等於 min_length 才會進入懸浮窗）
+  "style/layout/max_length": 36 # 連續排列的多個候選項總字數（包括候選項注釋）超過 max_length 時，把超出的候選項移到下一行顯示（單個候選項若超長，或者 max_length 數值過大，則由 max_width 決定是否換行）
+  "style/layout/max_width": 930 # 最大寬度，超過則自動換行
+  "style/layout/max_entries": 3 # 最大詞條數（允許進入懸浮窗的最大詞條數）
+  "style/layout/line_spacing_multiplier": 1 # 候選詞的行間距(倍數)
+  
   "preset_keys/BackSpace": {label: '⌫', repeatable: true, send: BackSpace}
   "preset_keys/Caps_Lock": {label: '⇪', send: Shift_L}
   "preset_keys/Hide": {label: '︾', send: BACK}
   "preset_keys/PairDoubleQuote":  {text: '""{Left}', label: '“”'}
-
   "preset_keyboards/zliu":
     name: 嘸蝦米鍵盤
     author: "zWind"
-    ascii_mode: 0
-    label_transform: uppercase
+    ascii_mode: 0              # 鍵盤的默認狀態（0：中文；1：英文）
+    label_transform: uppercase # uppercase|none 中文模式下的字母標籤自動大寫
     width: 10
     height: 100
     keys: # 鍵盤中每對{}括號代表一個按鍵，按從左到右、從上到下的順序排列。每行的寬度排滿100或雖然不足100但無法再容納一個按鍵又或者每行按鍵數量達到columns的設定值時，轉到下一行繼續排列。
@@ -62,13 +68,14 @@ patch:
     - {click: BackSpace, label: '⌫', width: 15}
 
     - {click: Hide, label: '︾', width: 15}
-    - {click: ',', long_click: Menu, hint: "ㄝ"}
-    - {click: '.', long_click: '<', paging: Page_Up, hint: "ㄡ"}
+    - {click: '/', long_click: Menu, hint: "ㄥ"}
+    - {click: ',', long_click: '<', paging: Page_Up, hint: "ㄝ"}
     - {click: space, width: 30}
-    - {click: '/', long_click: '>', has_menu: Page_Down, hint: "ㄥ"}
+    - {click: '.', long_click: '>', has_menu: Page_Down, hint: "ㄡ"}
     - {click: Keyboard_symbols, long_click: Keyboard_number}
     - {click: Return, long_click: CommitComment, width: 15}
 
+  "style/color_scheme": zliu
   "preset_color_schemes/zliu":
     name: dark
     author: zWind
