@@ -19,7 +19,7 @@ patch:
     name: 嘸蝦米鍵盤
     author: "zWind"
     ascii_mode: 0              # 鍵盤的默認狀態（0：中文；1：英文）
-    label_transform: uppercase # uppercase|none 中文模式下的字母標籤自動大寫
+    # label_transform: uppercase # uppercase|none 中文模式下的字母標籤自動大寫
     width: 10
     height: 100
     keys: # 鍵盤中每對{}括號代表一個按鍵，按從左到右、從上到下的順序排列。每行的寬度排滿100或雖然不足100但無法再容納一個按鍵又或者每行按鍵數量達到columns的設定值時，轉到下一行繼續排列。
@@ -71,8 +71,8 @@ patch:
     - {click: '/', long_click: Menu, hint: "ㄥ"}
     - {click: ',', long_click: '<', paging: Page_Up, hint: "ㄝ"}
     - {click: space, width: 30}
-    - {click: '.', long_click: '>', has_menu: Page_Down, hint: "ㄡ"}
-    - {click: Keyboard_symbols, long_click: Keyboard_number}
+    - {click: '.', long_click: '>', hint: "ㄡ"}
+    - {click: Keyboard_symbols, long_click: Keyboard_number, has_menu: Page_Down}
     - {click: Return, long_click: CommitComment, width: 15}
 
   "style/color_scheme": zliu
@@ -88,10 +88,3 @@ patch:
     hilited_candidate_back_color: 0x111111
     candidate_text_color: 0xe6e3d8
     comment_text_color: 0x808080
-
-  # "style/candidate_view_height": 55       # 候選字區高度
-  # "style/candidate_text_size": 36         # 候選字體大小
-  # "style/key_text_size": 32               # 按鍵文本大小（click）
-  # "style/symbol_text_size": 14            # 符號大小（long_click 和 hint）
-  # "style/text_size": 30                   # 編碼大小
-  # "style/comment_text_size": 16           # 候選注釋大小
