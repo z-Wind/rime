@@ -1,17 +1,19 @@
-customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.14.3
-  generator: "Rime::SwitcherSettings"
-  modified_time: "Sat Aug 20 14:58:27 2022"
-  rime_version: 1.5.3
+# default.custom.yaml
+# encoding: utf-8
+
 patch:
-  "ascii_composer/good_old_caps_lock": true
+  "ascii_composer/good_old_caps_lock": true  # 以 Caps Lock 切換到英文模式，默認輸出大寫字母
   "ascii_composer/switch_key":
-    Caps_Lock: clear
+    # clear 清除代碼，就是按此鍵後，將已輸入的字符清除
+    # commit_code 提交代碼，就是將已輸入的字符上屏
+    # inline_ascii 插入字符，就是按此鍵後，可以接著輸入，直到 enter 鍵再上屏
+    # noop 忽略，就是這個鍵在輸入法裡不會有任何操作
+
+    Caps_Lock: clear      # 切換大小寫時，直接清除
     Control_L: noop
     Control_R: noop
-    Shift_L: commit_code
-    Shift_R: commit_code
+    Shift_L: commit_code  # 切換中英時，直接上屏
+    Shift_R: commit_code  # 切換中英時，直接上屏
   schema_list:
     - {schema: zliu}
     - {schema: bopomofo_tw}

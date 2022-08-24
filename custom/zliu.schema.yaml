@@ -64,15 +64,15 @@ translator:
   enable_encoder: false
   enable_commit_history: false
   enable_completion: true # 不提示後續按鍵的組字結果
-  enable_sentence: false # 關閉連打組句。若要啟動的話需要打開 speller/delimiter 及 enable_user_dict
+  enable_sentence: false  # 關閉連打組句。若要啟動的話需要打開 speller/delimiter 及 enable_user_dict
   enable_user_dict: false # 取消使用者字頻調整機制。若打開的話則無法維持候選字順序。
-  preedit_format:
-    - "xlit|abcdefghijklmnopqrstuvwxyz,.'[]|ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ，．’〔〕"
+  # preedit_format:       # 上屏碼轉換成大寫
+  #   - "xlit|abcdefghijklmnopqrstuvwxyz,.'[]|ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ，．’〔〕"
 
 bopomofo:
   tag: bopomofo
   prefix: "`"
-  suffix: "'" # ; 鍵盤對應為 ㄤ
+  suffix: "'" # ;鍵對應為 ㄤ
   dictionary: terra_pinyin
   prism: bopomofo_tw
   enable_completion: true
