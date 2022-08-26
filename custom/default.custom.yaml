@@ -16,4 +16,4 @@ patch:
     Shift_R: commit_code  # 切換中英時，直接上屏
   schema_list:
     - {schema: zliu}
-    - {schema: bopomofo_tw}
+    #- {schema: bopomofo_tw} # 加入後會導致手機部署超久
