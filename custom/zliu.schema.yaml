@@ -11,9 +11,9 @@ schema:
     - "發明人 劉重次"
   description: 嘸蝦米
   dependencies:
-    - bopomofo_tw
+    - bopomofo_pure # 反查依賴項
 
-switches:
+switches:  
   - name: ascii_mode
     # reset: 1
     states: ["中文", "英數"]
@@ -24,6 +24,11 @@ switches:
   - name: ascii_punct
     reset: 1
     # states: ["中文句讀", "英文標點"]
+  - options: ["big5","utf8"]     # 字符集選單
+    reset: 1                     # 默認 UTF-8
+    states:
+      - BIG5
+      - UTF-8 
 
 engine:                    # 輸入引擎設定，即掛接組件的「處方」
   processors:              # 一、這批組件處理各類按鍵消息
@@ -40,18 +45,19 @@ engine:                    # 輸入引擎設定，即掛接組件的「處方」
     - ascii_segmentor      # ※ 標識西文段落
     - matcher              # ※ 標識符合特定規則的段落，如網址、反查等
     - abc_segmentor        # ※ 標識常規的文字段落
-    - affix_segmentor@bopomofo # 用戶自定義tag
+    - affix_segmentor@bopomofo_lookup # 用戶自定義tag
     - punct_segmentor      # ※ 標識句讀段落
     - fallback_segmentor   # ※ 標識其他未標識段落
   translators:             # 三、這批組件翻譯特定類型的編碼段爲一組候選文字
     # - echo_translator      # ※ 沒有其他候選字時，回顯輸入碼
     - punct_translator     # ※ 轉換標點符號
     - table_translator     # ※ 碼表翻譯器，用於倉頡、五筆等基於碼表的輸入方案，替換 script_translator
-    - script_translator@bopomofo  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
+    - table_translator@bopomofo_lookup  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
   filters:                 # 四、這批組件過濾翻譯的結果
     - simplifier           # ※ 繁簡轉換
     - uniquifier           # ※ 過濾重複的候選字，有可能來自繁簡轉換
-    - reverse_lookup_filter@bopomofo_reverse_lookup # 反查注音 
+    - charset_filter@big5  # BIG5 過濾
+    - reverse_lookup_filter@bopomofo_reverse_lookup # 反查注音  
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz,.'[]"
@@ -60,7 +66,7 @@ speller:
 
 translator:
   dictionary: zliu
-  enable_charset_filter: true  # 是否開啓字符集過濾 〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕
+  enable_charset_filter: false # 是否開啓字符集過濾 〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕
   enable_encoder: false        # 是否開啓自動造詞 〔僅table_translator有效〕
   enable_commit_history: false # 是否對已上屛詞自動成詞 〔僅table_translator有效〕
   enable_completion: false     # 是否提示後續按鍵的組字結果
@@ -69,20 +75,25 @@ translator:
   # preedit_format:            # 上屏碼轉換成大寫
   #   - "xlit|abcdefghijklmnopqrstuvwxyz,.'[]|ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ，．’〔〕"
 
-bopomofo:
-  tag: bopomofo
+bopomofo_lookup:
+  tag: bopomofo_lookup
   prefix: "`"
   suffix: "'" # ;鍵對應為 ㄤ
   dictionary: terra_pinyin
-  prism: bopomofo_tw
-  enable_completion: true
+  prism: bopomofo_pure
+  enable_charset_filter: true  # 是否開啓字符集過濾 〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕
+  enable_encoder: false        # 是否開啓自動造詞 〔僅table_translator有效〕
+  enable_commit_history: false # 是否對已上屛詞自動成詞 〔僅table_translator有效〕
+  enable_completion: true      # 是否提示後續按鍵的組字結果
+  enable_sentence: false       # 關閉連打組句。若要啟動的話需要打開 speller/delimiter 及 enable_user_dict
+  enable_user_dict: false      # 取消使用者字頻調整機制。若打開的話則無法維持候選字順序。
   preedit_format:
     - "xlit|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347'|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˊˇˋ˙ |"
   tips: 【注音反查】
   closing_tips: 【反查完成】
 
 bopomofo_reverse_lookup:
-  tags: [ bopomofo ]
+  tags: [ bopomofo_lookup ]
   overwrite_comment: true  # 覆蓋其他提示
   dictionary: zliu
   comment_format:
@@ -109,4 +120,4 @@ recognizer:
   import_preset: default 
   patterns:
     # punct: "^/([0-9]0?|[A-Za-z]+)$"
-    bopomofo: "`[1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/6347-]*'?$" # 「-」為「ㄦ」，移到最後面，讓正則可正確抓取
+    bopomofo_lookup: "`[1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/6347-]*'?$" # 「-」為「ㄦ」，移到最後面，讓正則可正確抓取
