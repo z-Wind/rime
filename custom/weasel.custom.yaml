@@ -10,9 +10,16 @@ customization:
 # 主要控制托盤圖標、候選詞橫豎排列、界面配色等等功能
 
 patch:
-  #"style/display_tray_icon": true     # 顯示圖標
+  # "style/display_tray_icon": true     # 顯示圖標
   "style/color_scheme": dark_temple   # 設定 skin
   "style/horizontal": true            # 橫向選字
 
-  # 預設為英數模式
-  "app_options/ttermpro.exe/ascii_mode": true
+  # 預設為英數模式 程序名字全用小寫字母
+  "app_options/ttermpro.exe/ascii_mode": true            # 終端機
+  "app_options/pwsh.exe/ascii_mode": true                # PowerShell
+  "app_options/everything.exe/ascii_mode": true          # Everything
+  "app_options/windowsterminal.exe/ascii_mode": true     # Windows Terminal
+  "app_options/code.exe/ascii_mode": true                # vscode
+  "app_options/cheatengine-x86_64.exe/ascii_mode": true  # Cheat Engine
+  
+  
