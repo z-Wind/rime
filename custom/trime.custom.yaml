@@ -15,13 +15,15 @@ patch:
   "preset_keys/Caps_Lock": {label: '⇪', send: Shift_L}
   "preset_keys/Hide": {label: '︾', send: BACK}
   "preset_keys/PairDoubleQuote":  {text: '""{Left}', label: '“”'}
+
+  # keyboards: [.default, letter, number, symbols, mini] # 鍵盤配置：自動鍵盤、字母、數字、符號、精简
   "preset_keyboards/zliu":
     name: 嘸蝦米鍵盤
     author: "zWind"
     ascii_mode: 0              # 鍵盤的默認狀態（0：中文；1：英文）
     # label_transform: uppercase # uppercase|none 中文模式下的字母標籤自動大寫
-    width: 10
-    height: 100
+    width: 10    # 單鍵寬度
+    height: 100  # 單鍵高度
     keys: # 鍵盤中每對{}括號代表一個按鍵，按從左到右、從上到下的順序排列。每行的寬度排滿100或雖然不足100但無法再容納一個按鍵又或者每行按鍵數量達到columns的設定值時，轉到下一行繼續排列。
     - {click: '1', long_click: '!', hint: "ㄅ"}
     - {click: '2', long_click: '@', hint: "ㄉ"}
@@ -74,6 +76,87 @@ patch:
     - {click: '.', long_click: '>', hint: "ㄡ"}
     - {click: Keyboard_symbols, long_click: Keyboard_number, has_menu: Page_Down}
     - {click: Return, long_click: CommitComment, width: 15}
+
+  "preset_keyboards/number":
+    name: 數字鍵盤
+    author: "zWind"
+    width: 33
+    height: 100
+    keys:
+    - {click: 'KP_1'}
+    - {click: 'KP_2'}
+    - {click: 'KP_3'}
+
+    - {click: 'KP_4'}
+    - {click: 'KP_5'}
+    - {click: 'KP_6'}
+
+    - {click: 'KP_7'}
+    - {click: 'KP_8'}
+    - {click: 'KP_9'}
+
+    - {click: Hide, label: '︾'}
+    - {click: 'KP_0', long_click: Keyboard_default}
+    - {click: BackSpace}
+
+  "preset_keyboards/symbols":
+    name: 符號
+    author: "zWind"
+    ascii_mode: 1
+    width: 10
+    height: 100
+    keys:
+    - {click: '1'}
+    - {click: '2'}
+    - {click: '3'}
+    - {click: '4'}
+    - {click: '5'}
+    - {click: '6'}
+    - {click: '7'}
+    - {click: '8'}
+    - {click: '9'}
+    - {click: '0'}
+
+    - {click: '~', long_click: '`'}
+    - {click: '!'}
+    - {click: '@'}
+    - {click: '#'}
+    - {click: '$'}
+    - {click: '￥'}
+    - {click: '%'}
+    - {click: '^'}
+    - {click: '&'}
+    - {click: '*'}
+
+    - {click: '(', long_click: '{'}
+    - {click: ')', long_click: '}'}
+    - {click: '[', long_click: '【'}
+    - {click: ']', long_click: '】'}
+    - {click: '「', long_click: '『'}
+    - {click: '」', long_click: '』'}
+    - {click: '、', ascii: '\', long_click: '|'}
+    - {click: '/', long_click: '√'}
+    - {click: ':'}
+    - {click: ';'}
+
+    - {click: '+'}
+    - {click: '-', long_click: '_'}
+    - {click: '='}
+    - {click: '〈', long_click: '《', ascii: '<'}
+    - {click: '〉', long_click: '》', ascii: '>'}
+    - {click: '“', ascii: '"', long_click: '‘'}
+    - {click: '”', ascii: "'", long_click: '’'}
+    - {click: '，', ascii: ','}
+    - {click: '？', ascii: '?'}
+    - {click: BackSpace}
+
+    - {click: Hide, label: '︾', width: 15}
+    - {click: Keyboard_number}
+    - {click: liquid_keyboard_switch}
+    - {click: space, width: 30}
+    - {click: '。', ascii: '.'}
+    - {click: Keyboard_default}
+    - {click: Return, width: 15}
 
   "style/color_scheme": zliu
   "preset_color_schemes/zliu":
