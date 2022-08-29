@@ -103,8 +103,11 @@ key_binder:
   bindings: 
     - { when: always, accept: Shift+space, toggle: full_shape }
     #- { when: always, accept: Control+Shift+4, toggle: zh_simp }
-    # - { when: has_menu, accept: space, send: space }
-    # - { when: composing, accept: space, send: Escape } # 注意語句流 fluid_editor
+    
+    # 錯誤碼時，改為不輸出，除非是 enter 
+    - { when: has_menu, accept: space, send: space }
+    - { when: composing, accept: space, send: Escape } # 注意語句流 fluid_editor
+    
     # - { when: has_menu, accept: period, send: period }
 
 simplifier:
