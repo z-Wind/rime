@@ -101,7 +101,8 @@ bopomofo_reverse_lookup:
 
 key_binder:
   bindings: 
-    - { when: always, accept: Shift+space, toggle: full_shape }
+    # 中英切換時，很容易按到 space，直接設為快捷鍵
+    - { when: always, accept: Shift+space, toggle: ascii_mode }
     #- { when: always, accept: Control+Shift+4, toggle: zh_simp }
     
     # 錯誤碼時，改為不輸出，除非是 enter 
