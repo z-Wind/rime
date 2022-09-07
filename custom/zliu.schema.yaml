@@ -52,7 +52,8 @@ engine:                    # 輸入引擎設定，即掛接組件的「處方」
     # - echo_translator      # ※ 沒有其他候選字時，回顯輸入碼
     - punct_translator     # ※ 轉換標點符號
     - table_translator     # ※ 碼表翻譯器，用於倉頡、五筆等基於碼表的輸入方案，替換 script_translator
-    - table_translator@bopomofo_lookup  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
+    # - script_translator    # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
+    - table_translator@bopomofo_lookup
   filters:                 # 四、這批組件過濾翻譯的結果
     - simplifier           # ※ 繁簡轉換
     - uniquifier           # ※ 過濾重複的候選字，有可能來自繁簡轉換

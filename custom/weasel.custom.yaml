@@ -21,5 +21,8 @@ patch:
   "app_options/windowsterminal.exe/ascii_mode": true     # Windows Terminal
   "app_options/code.exe/ascii_mode": true                # vscode
   "app_options/cheatengine-x86_64.exe/ascii_mode": true  # Cheat Engine
+  "app_options/capture.exe/ascii_mode": true             # OrCAD
+  "app_options/conemu.exe/ascii_mode": true              # cmder
+  "app_options/powerpcbviewer.exe/ascii_mode": true      # PADs
   
   
