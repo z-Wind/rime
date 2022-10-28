@@ -24,5 +24,8 @@ patch:
   "app_options/capture.exe/ascii_mode": true             # OrCAD
   "app_options/conemu.exe/ascii_mode": true              # cmder
   "app_options/powerpcbviewer.exe/ascii_mode": true      # PADs
+  "app_options/speedcrunch.exe/ascii_mode": true         # SpeedCrunch
+  "app_options/taskmgr.exe/ascii_mode": true             # 工作管理員
+  "app_options/notepad++.exe/ascii_mode": true           # Notepad++
   
   
